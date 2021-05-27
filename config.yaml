@@ -1,0 +1,37 @@
+region: eu-west-1
+
+function_name: studious_barnacle_test
+handler: service.handler
+description: The CLAB Hackathon Lambda Handler
+runtime: python3.8
+role: studious_barnacle-role-1au55ue7
+
+# S3 upload requires appropriate role with s3:PutObject permission
+# (ex. basic_s3_upload), a destination bucket, and the key prefix
+# bucket_name: 'example-bucket'
+# s3_key_prefix: 'path/to/file/'
+
+# if access key and secret are left blank, boto will use the credentials
+# defined in the [default] section of ~/.aws/credentials.
+aws_access_key_id:
+aws_secret_access_key:
+
+# dist_directory: dist
+# timeout: 15
+# memory_size: 512
+# concurrency: 500
+#
+
+# Experimental Environment variables
+environment_variables:
+  LANDING_URL: https://d2lhzte9uh4t98.cloudfront.net/
+
+# If `tags` is uncommented then tags will be set at creation or update
+# time.  During an update all other tags will be removed except the tags
+# listed here.
+tags:
+  product: Hackathon
+
+# Build options
+build:
+  source_directories: lib # a comma delimited list of directories in your project root that contains source to package.
