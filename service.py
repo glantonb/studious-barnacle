@@ -13,6 +13,7 @@ import base64
 from typing import Dict
 
 from qrcode.image.pil import PilImage
+import PIL.Image
 
 
 def generate_target_uri(event: Dict[str, str]) -> str:
